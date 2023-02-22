@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Solution</title>
+  <style>
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+        font-family: open sans;
+        font-size: 15px;
+}
+:root {
+    --primary: #933ded;
+    --dark: #232323;
+    --pure: #fff;
+    --smoke: whitesmoke;
+    --dark-gray: #999;
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--dark);
+    color: var(--pure);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: -webkit-fill-available;
+    background: --dark: #232323;
+    background-color: #202026;
+    z-index: 1;
+}
+.brand {
+    display: flex;
+    align-items: center;
+
+}
+
+.brand svg {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand svg path {
+    fill: var(--pure);
+}
+
+.nav-wrapper ul.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    left: 19%;
+    position: relative;
+}
+.nav-wrapper ul.nav-list li {
+    margin-left: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-wrapper ul.nav-list li a {
+    color: var(--pure);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease-in-out;
+}
+
+.nav-wrapper ul.nav-list li a:hover, .nav-wrapper ul.nav-list li.active a {
+    color: var(--primary);
+}
+
+.btn {
+    background: var(--primary);
+    color: var(--pure);
+    outline: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    border-radius: 5px ;
+    transition: all .5s ease-in-out;
+}
+.btn a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.btn:hover {
+    background: transparent;
+    border-color: var(--pure);
+    color:#636e72;
+}
+
+main section.header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 19px;
+}
+
+
+
+
+nav ul.dropdown-list {
+    list-style-type: none;
+    display: block;
+    background: var(--smoke);
+    padding: 6px 16px;
+    position: absolute;
+    width: max-content;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-wrapper ul.dropdown-list li {
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+.nav-wrapper ul.dropdown-list  li a {
+    color: var(--dark);
+} 
+
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
+    opacity: 1;
+    pointer-events: auto;
+    animation: moveUp .5s ease-in-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px); 
+    }
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile .hamburger {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.mobile .hamburger span {
+    background: var(--pure);
+    width: 28px;
+    height: 2px;
+    margin-bottom: 8px;
+}
+  b, strong {
+    margin-left: 7%;
+}
+
+.mobile ul.nav-list {
+    background: -webkit-linear-gradient(45deg, #434343, #000000);
+    background: linear-gradient(45deg, #434343, #000000);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.hamburger, .brand {
+    z-index: 9999;
+}
+
+.mobile ul.nav-list.open {
+    opacity: 1;
+    pointer-events: auto;  
+}
+
+.mobile .hamburger span {
+    transform-origin: left;
+    transition: all .3s ease-in-out;
+}
+
+.mobile ul.nav-list li a {
+    font-size: 20px;
+}
+
+.mobile ul.dropdown-list {
+    position: relative;
+    background: transparent;
+    text-align: center;
+    height: 0;
+    overflow-y: hidden;
+    transition: opacity 1s ease-in-out;
+    padding-top: 0;
+}
+
+.mobile .nav-wrapper ul li:hover .dropdown-list {
+    height: max-content;
+    padding-top: 6px;
+}
+
+.mobile ul.nav-list li {
+    margin-left: 0;
+    text-align: center;
+}
+
+.mobile .nav-wrapper ul.dropdown-list li a {
+    color: var(--dark-gray);
+}
+/* LOGO  */
+.logo{
+    width: 50px;
+    margin-left: 10px;
+        margin-right: 13%;
+}
+/* LOGO CSS ends here */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .firstContainer {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .secondContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      position: relative;
+      top: 54px;
+
+      }
+
+      .childContainer {
+        width: 20%;
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+            margin: 0px 12px 0px 12px;
+                  background-color: white ;
+                  border-radius: 5px;
+      }
+
+      .footerContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50px;
+      }
+
+      .footerChildLeft {
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .footerChildRight {
+        text-align: right;
+        padding-right: 10px;
+      }
+      .sdown{
+        position: relative;
+        top: 99px;
+      }
+      .ques{
+        text-align: center;
+        position: relative;
+        top: 20px;
+      }
+      .portfolioChild{
+    justify-content: center;
+    display: flex;
+    color: red;
+
+      }      .portfolioChild summary{
+    color: #696970;
+
+      }      
+
+      .portfolioChild details{
+  padding: 1px 34px ;
+  text-align: justify;
+    color: #c0c7c4
+
+      }
+      .footerPara{
+             top: 200px;
+             position: relative;
+             width: 80%;
+      }
+      .classWize{
+        position: relative;
+        top: 25%;
+        text-decoration: none;
+        color: #005aff;
+    font-weight: bold;
+      } 
+      .classWize a{
+        text-decoration: none;
+        color: blueviolet;
+      }
+.btnG{
+  display: flex;
+  justify-content: flex-start;
+      position: relative;
+     top: 250px;
+    margin-left: 100px;
+}
+.otherBtn{
+
+margin-left: 300px;
+top: 213px;
+
+}
+.footer{
+    background-color: #2e0909;
+/*         margin: 1.5% 0px 2% 0px; */
+position: relative;
+top: 300px;
+text-align: center;
+
+}
+#heart{
+color: red;
+}
+
+.thnk{
+
+animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color:  #00dcff;
+  }
+  33% {
+    color:  #ff00f7;
+  }
+  66% {
+    color: yellow;
+  }
+  100% {
+    color:  #00ff37;
+  }
+}
+
+.hlo{
+  font-size:4rem;
+  font-family: caveat;
+}
+
+
+/* RESPONSIVENESS  */
+@media(max-width: 600px){
+  .footerPara {
+    width: 93%;
+    text-align: justify;
+}
+.portfolioChild {
+    justify-content: left;
+}
+.childContainer {
+    width: 55%;
+    margin: 4px 12px 0px 12px;
+}
+.secondContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 2fr;
+    justify-items: center;
+}
+.firstContainer {
+    width: 90%;
+    text-align: justify;
+}
+.btnG {
+    display: flex;
+    justify-content: center;
+    top: 224px;
+    margin-left: 0;
+}
+.otherBtn {
+    top: 232px;
+    margin-left: 0;
+}
+}
+@media(max-width: 440px){
+  .childContainer {
+    width: 95%;
+    margin: 4px 5px 0px 5px;
+}
+}
+
+
+
+
+
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="mobile">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+
+               <a href=""><img src="https://res.cloudinary.com/dwgpjcmee/image/upload/v1675594461/logo_j7psw0.png" class="logo"></a> 
+                <span><strong>SpiffyNotes</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li><a href="https://spiffynotes.blogspot.com/p/get-in-touch.html">Contact</a></li>
+                <li>
+                    <a href="#abtme">About Me</a>
+                    <ul class="dropdown-list">
+                    
+                        <li><a href="#abtme">A UI and UX Dev</a></li>
+                        <li><a href="#abtme">Blogger</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://spiffynotes.blogspot.com/p/my-services.html">My Services</a></li>
+                <li><a href="https://spiffynotes.blogspot.com/p/my-goal.html">My Goal</a></li>
+                <li>
+                    <!-- <button class="btn">Login</button> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sdown">     
+
+    <div class="firstContainer"><span class="hlo">Hello</span>
+      <p>
+This website offers a comprehensive and convenient education solution for students of class 9th to 12th. With an extensive collection of notes and PDFs, it provides a simple and accessible way to study and excel in your academics. All resources on this website are free to access, making quality education accessible to everyone. Whether you're looking for revision materials or additional study resources, this website is the perfect place to find all the help you need.
+</p>
+    </div>
+
+
+
+
+
+<div class="ques">
+  <div class="portfolioChild">
+ <details>I believe sharing knowledge is the key to unlocking the world's potential. I created this website with the aim of providing a clearer and more effective solution to homework problems for students. With this website, I hope to empower students to tackle their homework with confidence and achieve academic success. Whether you're an average student or simply need a clearer explanation, this website has everything you need to succeed.
+<summary>Why did I built this Website ?</summary></details>
+</div>
+
+ <div class="portfolioChild">
+ <details>Well, I am a student too. And I have the same thought which you have, I mean I know where a student can get problem while solving question. So I think I can solve any question on the basis of your thought. While there may be millions of websites offering similar content, I believe that my unique approach sets me apart. I have a gift for making even the most complex topics easy to understand, and I am dedicated to sharing my knowledge with the world. Whether you are struggling with a particular subject or simply looking for a clearer explanation, my website provides the perfect solution. With my ability to simplify complex concepts and present them in a way that is accessible to everyone, I am confident that I can help you achieve a deeper understanding of the subjects you are studying
+
+<summary>Why does Student come here if there is millions other Site ?</summary></details>
+</div> 
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div class="secondContainer">
+      <div class="childContainer"><span class="classWize"><a href="https://spiffynotes.blogspot.com/p/class-9-all-book-solution.html">Class 9 Solution</a></span></div>
+      <div class="childContainer"><span class="classWize"><a href="https://spiffynotes.blogspot.com/p/class-10-all-book-solution.html">Class 10 Solution</a></span></div>
+      <div class="childContainer"><span class="classWize"><a href="https://spiffynotes.blogspot.com/p/class-11-all-book-solution.html">Class 11 Solution</a></span></div>
+      <div class="childContainer"><span class="classWize"><a href="https://spiffynotes.blogspot.com/p/class-12-all-book-solution.html">Class 12 Solution</a></span></div>
+    </div>
+</div><!-- /*sdown class */ -->
+
+
+<div class="firstContainer footerPara">
+  <p>I understand the importance of having a reliable and informative platform for your studies and it is our sincere hope that you will find this website to be just that. I have worked tirelessly to gather and curate the most helpful and relevant resources to aid in your learning and advancement in your field. I aim to make your studying experience as effortless and efficient as possible. I sincerely hope that you appreciate the time and effort put into creating this website and that it will be of great help to you in your academic journey. <span class="thnk">Thank You !</span> </p>
+</div>
+
+<div class="btnG">
+  <div><button class="btn"> <a href="/">Back to Home</a></button></div>
+</div>
+<div class="btnG otherBtn">
+  <div><button class="btn"> <a href="https://spiffynotes.blogspot.com/p/programming-section.html">Programming Section</a></button></div>
+</div>
+
+<div class="footer">
+    <span>Made with <span id="heart">❤</span> by Dharmendra</span>
+    <span>© 2023, Spiffynotes</span>
+</div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  
+
+window.addEventListener('resize', function(){
+    addRequiredClass();
+})
+
+
+function addRequiredClass() {
+    if (window.innerWidth < 860) {
+        document.body.classList.add('mobile')
+    } else {
+        document.body.classList.remove('mobile') 
+    }
+}
+
+window.onload = addRequiredClass
+
+let hamburger = document.querySelector('.hamburger')
+let mobileNav = document.querySelector('.nav-list')
+
+let bars = document.querySelectorAll('.hamburger span')
+
+let isActive = false
+
+hamburger.addEventListener('click', function() {
+    mobileNav.classList.toggle('open')
+    if(!isActive) {
+        bars[0].style.transform = 'rotate(45deg)'
+        bars[1].style.opacity = '0'
+        bars[2].style.transform = 'rotate(-45deg)'
+        isActive = true
+    } else {
+        bars[0].style.transform = 'rotate(0deg)'
+        bars[1].style.opacity = '1'
+        bars[2].style.transform = 'rotate(0deg)'
+        isActive = false
+    }
+    
+
+})
+</script>
+
+
+</body>
+</html>

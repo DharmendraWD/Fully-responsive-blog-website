@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <head>
+    <style>
+.main .PopularPosts, .page_body .centered>#footer {
+    padding: 16px 40px;
+    display: none;
+}
+  #comments.embed[data-num-comments="0"] {
+    display: none;
+}
+  .post-title, .post-title a, .post-title a:hover, .post-title a:visited {
+    display: none;
+}
+  div.widget.Blog .blog-posts .post-outer-container {
+    padding: 0px;
+}
+  
+  .sidebar-container .navigation, .sidebar-container .sidebar_top_wrapper {
+    display: none;
+}
+  .sidebar-container {
+    display: none;
+}
+  .centered-bottom .svg-icon-24, body.collapsed-header .centered-top-container .svg-icon-24 {
+    display: none;
+}
+  .bg-photo-container,
+  .bg-photo-overlay{
+    display:none;
+  }
+  .page_body {
+    margin:0;
+}
+  body.item-view .blog-name,
+  .flat-icon-button{
+    display: none;
+}
+  .Blog .blog-posts .post-outer-container, 
+  .Blog .blog-posts .post-outer-container .post-outer,
+  .page_body .centered,
+  .centered-bottom {
+    padding:0;
+  }
+   .page_body .centered {
+     max-width:100%;
+  }
+  
+  
+  .post-body,
+  .page_body .widget {
+    margin:0;
+  }
+  .post-bottom {
+  display: none; 
+
+}
+  .PopularPosts .post {
+    display: none;
+}
+  .PopularPosts .item-content {
+    display: none;
+}
+  .widget-content{
+    display:none;
+  }
+  .PopularPosts h3.title {
+    display: none;
+}
+  .PopularPosts, .PopularPosts h3.title a {
+    display: none;
+}
+  .post{
+    margin:0;
+  }
+  
+  /*CSS HERE */
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+        font-family: open sans;
+        font-size: 15px;
+}
+:root {
+    --primary: #933ded;
+    --dark: #232323;
+    --pure: #fff;
+    --smoke: whitesmoke;
+    --dark-gray: #999;
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--dark);
+    color: var(--pure);
+}
+
+.container22 {
+    margin: 0 auto;
+}
+
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: -webkit-fill-available;
+    background: --dark: #232323;
+    background-color: #202026;
+    z-index: 1;
+  top:0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+
+}
+
+.brand svg {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.brand svg path {
+    fill: var(--pure);
+}
+
+.nav-wrapper ul.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.nav-wrapper ul.nav-list li {
+    margin-left: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-wrapper ul.nav-list li a {
+    color: var(--pure);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease-in-out;
+}
+
+.nav-wrapper ul.nav-list li a:hover, .nav-wrapper ul.nav-list li.active a {
+    color: var(--primary);
+}
+
+.btn {
+    background: var(--primary);
+    color: var(--pure);
+    outline: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    border-radius: 5px ;
+    transition: all .5s ease-in-out;
+        margin-left: 22px;
+
+}
+.btn a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.btn:hover {
+    background: transparent;
+    border-color: var(--pure);
+    color:#636e72;
+}
+
+main section.header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 19px;
+}
+
+
+
+
+nav ul.dropdown-list {
+    list-style-type: none;
+    display: block;
+    background: var(--smoke);
+    padding: 6px 16px;
+    position: absolute;
+    width: max-content;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-wrapper ul.dropdown-list li {
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+.nav-wrapper ul.dropdown-list  li a {
+    color: var(--dark);
+} 
+
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
+    opacity: 1;
+    pointer-events: auto;
+    animation: moveUp .5s ease-in-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(20px); 
+    }
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile .hamburger {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    cursor: pointer;
+      position: absolute;
+    right: 22px;
+}
+
+.mobile .hamburger span {
+    background: var(--pure);
+    width: 28px;
+    height: 2px;
+    margin-bottom: 8px;
+}
+  b, strong {
+    margin-left: 7%;
+    display:block;
+    width:91px;
+    
+}
+
+.mobile ul.nav-list {
+    background: -webkit-linear-gradient(45deg, #434343, #000000);
+    background: linear-gradient(45deg, #434343, #000000);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.hamburger, .brand {
+    z-index: 9999;
+}
+
+.mobile ul.nav-list.open {
+    opacity: 1;
+    pointer-events: auto;  
+}
+
+.mobile .hamburger span {
+    transform-origin: left;
+    transition: all .3s ease-in-out;
+}
+
+.mobile ul.nav-list li a {
+    font-size: 20px;
+}
+
+.mobile ul.dropdown-list {
+    position: relative;
+    background: transparent;
+    text-align: center;
+    height: 0;
+    overflow-y: hidden;
+    transition: opacity 1s ease-in-out;
+    padding-top: 0;
+}
+
+.mobile .nav-wrapper ul li:hover .dropdown-list {
+    height: max-content;
+    padding-top: 6px;
+}
+
+.mobile ul.nav-list li {
+    margin-left: 0;
+    text-align: center;
+}
+
+.mobile .nav-wrapper ul.dropdown-list li a {
+    color: var(--dark-gray);
+}
+.footer{
+    background-color: #2e0909;
+    position: relative;
+    top: 324px;
+    text-align: center;
+            display: block;
+        width: 100%;
+
+}
+.dropdown{
+    text-align: center;
+ }
+#heart{
+color: red;
+}
+
+/* LOGO  */
+.logo{
+    width: 50px;
+    margin-left: 10px;
+        margin-right: 13%;
+}
+/* LOGO CSS ends here */
+.pro{
+    font-weight: bold;
+}
+ .containerrr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:  50px;
+
+      }
+
+/*       BUTTON  */
+.bttn{
+    display: flex;
+        margin-top: 50px;
+            position: relative;
+    top: 90px;
+}
+.dropDownMenu{
+
+       position: relative;
+    top: 189px;
+
+}
+      
+      /* Grid child styles */
+      .grid-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin: 50px 0;
+        justify-content: center;
+    justify-items: center;
+      }
+      
+      /* Header styles */
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        position: relative;
+            top: 29px;
+      }
+      
+ 
+
+.parag {
+    width: 75%;
+    position: relative;
+    top: 42px;
+    text-align: justify;
+}
+
+.parag2 {
+    width: 65%;
+    position: relative;
+    top: 15px;
+    text-align: justify;
+    /* float: right; */
+    margin: 0 auto;
+}
+
+
+/* RESPONSIVENESS */   /* RESPONSIVENESS */ /* RESPONSIVENESS */    /* RESPONSIVENESS */    /* RESPONSIVENESS */    /* RESPONSIVENESS */             
+/* RESPONSIVENESS */
+@media(max-width: 890px){
+  .parag2 {
+    width: 70%;
+}
+}
+@media(max-width: 790px){
+    .dropDownMenu {
+    top: 269px;
+}
+.bttn {
+
+    top: 90px;
+    flex-direction: column;
+}
+.btn {
+    margin: 5px auto;
+}
+}
+@media(max-width: 650px){
+.parag {
+    width: 96%;
+}
+.bttn {
+    top: 116px;
+}
+.parag2 {
+    width: 94%;
+}
+.containerrr {
+    margin: 50px 0px;
+}
+.btn {
+    text-align: center;
+    display: block;
+        margin: 3px auto;
+}
+}
+
+@media(max-width: 440px){
+  .grid-child {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:0px;
+    width: 100%;
+    max-width: 800px;
+    margin: 60px 0;
+}
+
+}
+.summary{
+  font-size: 19px;
+}
+
+
+        display: none;
+      }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+     display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    animation: dropdown 1.5s;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    border-radius: 8px;
+}
+
+@keyframes dropdown {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-button {
+    background-color: #e3e3e3;
+    color: black;
+    padding: 8px 75px;
+    font-size: 16px 19px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: grays;
+}
+
+
+@media(max-width: 359px){
+    .dropDownMenu {
+    top: 313px;
+}
+}
+@media(max-width: 300px){
+    .dropDownMenu {
+    top: 368px;
+}
+}
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  </head>
+<body class="mobile">
+    <nav>
+        <div class="container22 nav-wrapper">
+            <div class="brand">
+
+               <a href=""><img src="https://res.cloudinary.com/dwgpjcmee/image/upload/v1675594461/logo_j7psw0.png" class="logo"></a> 
+                <span><strong>SpiffyNotes</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li><a href="https://spiffynotes.blogspot.com/p/get-in-touch.html">Contact</a></li>
+                <li>
+                    <a href="#abtme">About Me</a>
+                    <ul class="dropdown-list">
+                    
+                        <li><a href="#abtme">A UI and UX Dev</a></li>
+                        <li><a href="#abtme">Blogger</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://spiffynotes.blogspot.com/p/my-services.html">My Services</a></li>
+                <li><a href="https://spiffynotes.blogspot.com/p/my-goal.html">My Goal</a></li>
+                <li>
+                    <!-- <button class="btn">Login</button> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Container -->
+    <div class="containerrr">
+      <!-- Header -->
+      <h1 id="helloP">Mastery In HTML3</h1>
+
+
+
+
+
+
+
+
+      <div class="parag">Hi, my name is Dharmendra Sharma and I am a seasoned frontend web developer with extensive experience in the field.
+        In this blog series, I am dedicated to teaching you HTML, starting from the basics and progressing all the way to advanced concepts. I will be covering every aspect of HTML in great detail, including the fundamentals such as what HTML is, why it is used, and the different tags, attributes, and syntax that make it up. If you follow my lessons from start to finish, I guarantee that you will become an expert in HTML.
+      </div>
+      
+
+
+
+<div class="dropDownMenu">
+<div class="dropdown">
+  <button class="dropdown-button">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+    <a href="#">Option 4</a>
+    <a href="#">Option 5</a>
+    <a href="#">Option 6</a>
+  </div>
+</div>
+</div>
+
+
+
+    
+     
+          
+
+<!-- <div id="notice_Tag"><h2>I apologize for the delay and assure you that I am putting in a great deal of effort every day to get the notes to you as soon as possible.</h2></div> -->
+
+
+<div class="parag2">This course has been created with the goal of being easy to follow, even for those with no prior knowledge of the basics of the internet, browsers, and servers. I have structured the course in a way that makes it accessible and easy to understand for anyone, regardless of their background. To aid in your learning, I will be providing a comprehensive cheatsheet along with hands-on exercises. If you follow the course closely and put in the effort, I am confident that you will become a <span class="pro">pro </span> in no time.</div>
+
+
+</div>
+
+<div class="bttn">
+<div><button class="btn obtn">Back To Home</button></div>
+<div><button class="btn obtn">Get  CSS Course</button></div>
+
+</div>
+<div class="footer">
+    <span>Made with <span id="heart">❤</span> by Dharmendra</span>
+    <span>© 2023, All right Reserved</span>
+</div>
+
+    <script>
+  
+var dropdownButton = document.querySelector(".dropdown-button");
+var dropdownContent = document.querySelector(".dropdown-content");
+var options = document.querySelectorAll(".dropdown-content a");
+
+dropdownButton.addEventListener("click", function() {
+  if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+  } else {
+    dropdownContent.style.display = "block";
+    animateColor();
+  }
+});
+
+dropdownContent.addEventListener("click", function(event) {
+  event.stopPropagation();
+});
+
+function animateColor() {
+  options.forEach(function(option) {
+    option.style.transition = "color 1.5s";
+    option.style.color = getRandomColor();
+  });
+}
+
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+
+
+
+// NAV
+window.addEventListener('resize', function(){
+    addRequiredClass();
+})
+
+
+function addRequiredClass() {
+    if (window.innerWidth < 860) {
+        document.body.classList.add('mobile')
+    } else {
+        document.body.classList.remove('mobile') 
+    }
+}
+
+window.onload = addRequiredClass
+
+let hamburger = document.querySelector('.hamburger')
+let mobileNav = document.querySelector('.nav-list')
+
+let bars = document.querySelectorAll('.hamburger span')
+
+let isActive = false
+
+hamburger.addEventListener('click', function() {
+    mobileNav.classList.toggle('open')
+    if(!isActive) {
+        bars[0].style.transform = 'rotate(45deg)'
+        bars[1].style.opacity = '0'
+        bars[2].style.transform = 'rotate(-45deg)'
+        isActive = true
+    } else {
+        bars[0].style.transform = 'rotate(0deg)'
+        bars[1].style.opacity = '1'
+        bars[2].style.transform = 'rotate(0deg)'
+        isActive = false
+    }
+    
+
+})
+</script>
+  </body>
+</html>
